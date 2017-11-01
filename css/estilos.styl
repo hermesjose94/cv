@@ -1,0 +1,289 @@
+/*
+flex-direction: row | column |  row-reverse | column-reverse
+flex-wrap: no-wrap | wrap | wrap-reverse para que se adapten al tamaño o no
+flex-flow: row wrap -> recive el felx-direction y wrap
+justify-content: flex-start | flex-end | center | space-around | space-between
+align-items: flex-start | flex-end | center | stretch | baseline
+align-content: flex-start | flex-end | center | stretch | space-around | space-between
+para elementos
+flex-grow:  1
+flex-shrink: 1
+order: 1 cualquier numero
+*/
+
+azul_oscuro =#4b7da7
+azul_claro =#55acee
+titulo = #444
+gris = #8d8d8d
+
+Cprogress(porcent)
+  deg= porcent/100 *180
+  return unit(deg,"deg")
+
+circular_progress(porcent,texto,bcolor,b2color,fcolor)
+  porcentI = porcent * -1
+  progress = Cprogress(porcent)
+  progressI = Cprogress(porcentI)
+  background linear-gradient(
+    0deg,
+    bcolor 50%,
+    rgba(b2color,0.2) 50%)
+  transform rotate(progress)
+  &:before
+  &:after
+    color b2color
+  &:before
+    content texto
+    background fcolor content-box
+    transform rotate(progressI)
+    text-transform uppercase
+  &:after
+    content "" + porcent + "%" + ""
+    background linear-gradient(transparent 50%,fcolor 50%)
+    transform scale(1.1) rotate(progressI)
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+a
+  text-decoration none
+
+body
+  background url('../img/bg.png')
+  background-size cover
+  background-attachment fixed
+  font-family: 'Open Sans', sans-serif,arial;
+
+.contenedor
+  width 98%
+  max-width 700px
+  margin auto
+  height 100%
+  display flex
+  align-items center
+  .tarjeta
+    background white
+    margin 40px 0
+    border-radius 5px
+    overflow hidden
+    z-index 1000
+    width 100%
+//==============Slider==============================
+    .slider_banner
+      overflow hidden
+      z-index 1000
+      position relative
+      .banner
+        position relative
+        width 100%
+        img
+          vertical-align top
+          width 100%
+          position absolute
+          top 0
+          left 100%
+      .flecha-banner
+        font-size 35px
+        line-height 35px
+        color rgba(0,0,0,0.2)
+        position absolute
+        top 50%
+        z-index 1100
+        &:hover
+          color rgba(0,0,0,0.5)
+        &.anterior
+          left 20px
+        &.siguiente
+          right 20px
+//==============Slider Info==============================
+    .slider_info
+      text-align center
+      overflow hidden
+      padding 20px 0
+      z-index 1000
+      position relative
+//==============Seccion Informacion==============================
+      .informacion
+        width 100%
+        article
+          width 100%
+          overflow hidden
+          posicion relative
+          .slide
+            background white
+            width 100%
+            left 100%
+            padding 20px 80px
+            position absolute
+//=========Slide info===============
+        .avatar
+          width 100px
+          height 100px
+          display flex
+          align-items center
+          justify-content center
+          width 100%
+          margin-bottom 10px
+          img
+            width 100px
+            height 100px
+            border-radius 50%
+            display inline-block
+        .nombre
+          color titulo
+          font-size 36px
+          line-height 36px
+          font-weight 600
+          margin-bottom 16px
+        .trabajo
+          color azul_claro
+          font-size 18px
+          line-height 24px
+          margin-bottom 16px
+        .contactos
+          color gris
+          font-size 18px
+          line-height 24px
+          margin-bottom 16px
+          ul
+            list-style none
+            li
+              display flex
+              align-items center
+              justify-content center
+              i
+                margin-right 10px
+                font-size 32px
+                color azul_oscuro
+              a
+                color gris
+                &:hover
+                  color azul_oscuro
+        .pais
+          color gris
+          font-size 14px
+          line-height 14px
+          img
+            position relative
+            top 2px
+            margin-right 10px
+        .subtitulo
+          color titulo
+          font-size 18px
+          line-height 24px
+          margin-bottom 20px
+        .texto
+          color gris
+          font-size 18px
+          line-height 24px
+          margin-bottom 16px
+        .lista
+          text-align left
+          height 100%
+          padding 0px 10px
+          h3
+          span
+            color titulo
+            font-size 16px
+            line-height 20px
+          p
+            color gris
+            font-size 14px
+            line-height 24px
+            margin-bottom 16px
+        .barras
+          display flex
+          align-items center
+          justify-content center
+          flex-direction row
+          flex-wrap wrap
+          .circular-progress
+            margin 0 10px
+            &
+            &:before
+            &:after
+              width 150px
+              height 150px
+              border-radius 50%
+            position relative
+            &:before
+            &:after
+              position absolute
+              top 0
+              left 0
+              text-align center
+              font-size 12px
+            &:before
+              padding 10px
+              box-sizing border-box
+              line-height 100px
+            &:after
+              line-height 160px
+            &.html
+              circular_progress(90,'HTML5',#ef5e38,gris,white)
+            &.css
+              circular_progress(90,'CSS3',#0070ba,gris,white)
+            &.php
+              circular_progress(70,'PHP',#673ab7,gris,white)
+            &.sql
+              circular_progress(50,'SQL',azul_claro,gris,white)
+            &.angular
+              circular_progress(40,'Angular',#e23337,gris,white)
+            &.photoshop
+              circular_progress(50,'Photoshop',black,gris,white)
+            &.java
+              circular_progress(90,'JAVA',orange,gris,white)
+            &.cplus
+              circular_progress(80,'C++',#009688,gris,white)
+            &.android
+              circular_progress(45,'Android',green,gris,white)
+            &.ingles
+              circular_progress(50,'Ingles',#486063,gris,white)
+
+
+//=========Flechas Slide info===============
+      .flecha-info
+        font-size 35px
+        line-height 35px
+        color #e6e6e6
+        position absolute
+        top 50%
+        z-index 1000
+        &:hover
+          color azul_oscuro
+        &.anterior
+          left 20px
+        &.siguiente
+          right 20px
+//=========Botones Slide info===============
+      .botones span
+        width 14px
+        height 13px
+        display inline-block
+        margin 0 10px
+        border-radius 50%
+        background #e6e6e6
+        &.active
+          background azul_oscuro
+//=========Redes Sociales===============
+    .redes_sociales
+      width 100%
+      text-align center
+      padding 20px 0
+      a
+        display inline-block
+        width 50px
+        height 50px
+        line-height 20px
+        padding 14px 0
+        color white
+        background black
+        border-radius 50%
+        margin 0 10px
+      .facebook
+        background #3b5998
+      .twitter
+        background #55acee

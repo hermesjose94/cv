@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Hermes Perez</title>
-</head>
-<body>
-	<h1>Hola</h1>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hermes Perez</title>
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+      <div class="contenedor" id="contenedor">
+        <section class="tarjeta">
+          <section class="slider_banner">
+            <div class="banner" id="banner">
+              <img src="img/1.jpg" alt="" class="active slide">
+              <img src="img/2.jpg" alt="" class="slide">
+              <img src="img/3.jpg" alt="" class="slide">
+              <img src="img/4.jpg" alt="" class="slide">
+              <img src="img/5.jpg" alt="" class="slide">
+            </div>
+            <a href="#" id="banner-prev" class="flecha-banner anterior"><span class="fa fa-chevron-left"></span></a>
+            <a href="#" id="banner-next" class="flecha-banner siguiente"><span class="fa fa-chevron-right"></span></a>
+          </section>
+          <section class="slider_info">
+            <a href="#" id="info-prev" class="flecha-info anterior"><span class="fa fa-chevron-left"></span></a>
+            <a href="#" id="info-next" class="flecha-info siguiente"><span class="fa fa-chevron-right"></span></a>
+            <section id="informacion" class="informacion">
+              <article id="info">
+                <div class="slide active">
+                  <div class="avatar">
+                    <img src="img/avatar.png" alt="">
+                  </div>
+                  <h1 class="nombre">Hermes Perez</h1>
+                  <p class="trabajo">Ingeniero Informático</p>
+                  <div class="contactos">
+                    <ul>
+                      <li><i class="fa fa-mobile"></i><a href="tel:+584265783218">(+58) 426 578 3218</a></li>
+                      <li><i class="fa fa-envelope-o"></i><a href="mailto:hermesjose94@gmail.com">hermesjose94@gmail.com</a></li>
+                    </ul>
+                  </div>
+                  <p class="pais"><img src="img/bandera.png" alt="">San Cristobal,Venezuela</p>
+                </div>
+                <div class="slide">
+                  <h2 class="subtitulo"> <i class="fa fa-university"></i>  Formación Académica</h2>
+                  <div class="lista">
+                    <ul>
+                      <li >
+                          <h3>Universidad Nacional Experimental del Táchira</h3>
+                          <spam>2011-Act</spam>
+                        <p>Ingeniería Informática con 130 Unidades de Crédito. Primer lugar en cuadro de horno 2011, 2012,2013</p>
+                      </li>
+                      <li>
+                          <h3>Colegio Santa Rosa de Lima</h3>
+                          <spam>2009-2011</spam>
+                        <p>Bachiller en Ciencias y Tecnologías</p>
+                      </li>
+                      <li>
+                          <h3>Formacion Permanente UNET</h3>
+                          <spam>2013-2015</spam>
+                        <p>Nivel 0,1,2,3 de inglés adultos</p>
+                      </li>
+                      <li>
+                          <h3>Formacion Permanente UNET</h3>
+                          <spam>2013-2015</spam>
+                        <p>Curso de administración de redes</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="slide">
+                  <h2 class="subtitulo"><i class="fa fa-globe"></i>  Habilidades</h2>
+                  <div class="barras">
+                    <div class="circular-progress html"></div>
+                    <div class="circular-progress css"></div>
+                    <div class="circular-progress php"></div>
+                    <div class="circular-progress sql"></div>
+                    <div class="circular-progress angular"></div>
+                    <div class="circular-progress photoshop"></div>
+                    <div class="circular-progress java"></div>
+                    <div class="circular-progress cplus"></div>
+                    <div class="circular-progress android"></div>
+                    <div class="circular-progress ingles"></div>
+                  </div>
+                </div>
+              </article>
+              <div class="botones" id="botones"></div>
+            </section>
+          </section>
+          <section class="redes_sociales">
+            <a href="https://www.facebook.com/hermesjose.perezrojas" class="facebook"><span class="fa fa-facebook"></span></a>
+            <a href="https://twitter.com/hermesjose94" class="twitter"><span class="fa fa-twitter"></span></a>
+          </section>
+        </section>
+      </div>
+      <script src="js/jquery-latest.min.js"></script>
+      <script src="js/prefixfree.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
 </html>

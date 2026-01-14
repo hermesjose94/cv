@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scroll offset for sticky header */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+/* Estilos para impresión/PDF */
+@media print {
+  body {
+    background-color: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    max-width: 100%;
+    margin: 0;
+    padding: 15mm;
+    background-color: white !important;
+  }
+
+  /* Ocultar header, botones y sección de contacto */
+  header,
+  button,
+  a[class*='bg-blue'],
+  a[class*='rounded-lg'],
+  section[id='contact'] {
+    display: none !important;
+  }
+
+  /* Agregar línea azul a títulos de sección */
+  section > h2 {
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 4px;
+    page-break-after: avoid;
+  }
+
+  /* Evitar saltos de página dentro de secciones */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 6mm;
+    background-color: white !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Eliminar fondos grises y cajas */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Fondo blanco para el body y contenedor principal */
+  body,
+  #root,
+  main {
+    background-color: white !important;
+  }
+
+  /* Eliminar sombras y bordes de cajas */
+  section {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Mantener los badges de skills con sus colores */
+  #skills span[class*='bg-blue'] {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+    border: 1px solid #93c5fd !important;
+    padding: 4px 12px !important;
+    border-radius: 9999px !important;
+    display: inline-block !important;
+    margin: 4px !important;
+  }
+}
+
+/* Custom animations for Tailwind */
+@keyframes slide-in-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.slide-in-from-top-2 {
+  animation-name: slide-in-from-top;
+}
+
+.slide-in-from-bottom-2 {
+  animation-name: slide-in-from-bottom;
+}
+
+.slide-in-from-left-2,
+.slide-in-from-left-4 {
+  animation-name: slide-in-from-left;
+}
+
+.slide-in-from-right-4 {
+  animation-name: slide-in-from-right;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.scale-in-95 {
+  animation-name: scale-in;
+}
+
+.duration-200 {
+  animation-duration: 0.2s;
+}
+
+.duration-300 {
+  animation-duration: 0.3s;
+}
+
+.duration-500 {
+  animation-duration: 0.5s;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}

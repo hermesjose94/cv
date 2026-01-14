@@ -125,7 +125,7 @@ export function WorkExperience({ experience }: WorkExperienceProps) {
               {hasExpandableContent && (
                 <button
                   onClick={() => toggleJobExpansion(job.id)}
-                  className={`text-blue-600 hover:text-blue-800 text-xs sm:text-sm font-medium mb-3 flex items-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-sm group ${
+                  className={`text-blue-600 hover:text-blue-800 text-xs sm:text-sm font-medium mb-3 flex items-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-sm group print:hidden ${
                     isHovered ? 'text-blue-700' : ''
                   }`}
                 >
@@ -148,8 +148,9 @@ export function WorkExperience({ experience }: WorkExperienceProps) {
                 </button>
               )}
 
+              {/* Contenido expandible - en pantalla solo si isExpanded */}
               {isExpanded && (
-                <div className="space-y-3 animate-in slide-in-from-top-2 duration-300 fade-in">
+                <div className="space-y-3 animate-in slide-in-from-top-2 duration-300 fade-in print:hidden">
                   {job.highlights && job.highlights.length > 0 && (
                     <ul className="list-disc list-inside text-gray-600 text-xs sm:text-sm space-y-1 pl-2">
                       {job.highlights.map((highlight, index) => (
@@ -171,6 +172,34 @@ export function WorkExperience({ experience }: WorkExperienceProps) {
                           key={index}
                           className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full hover:bg-blue-100 hover:text-blue-700 transition-all cursor-default animate-in scale-in-95 duration-300"
                           style={{ animationDelay: `${index * 30}ms` }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Contenido expandible - en PDF siempre visible */}
+              {hasExpandableContent && (
+                <div className="hidden print:block space-y-3">
+                  {job.highlights && job.highlights.length > 0 && (
+                    <ul className="list-disc list-inside text-gray-600 text-xs sm:text-sm space-y-1 pl-2">
+                      {job.highlights.map((highlight, index) => (
+                        <li key={index} className="leading-relaxed">
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {job.technologies && job.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                      {job.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
                         >
                           {tech}
                         </span>

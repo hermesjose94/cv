@@ -22,8 +22,14 @@ export function ProfessionalSummary({ summary }: ProfessionalSummaryProps) {
         {t('sections.professionalSummary')}
       </h2>
       <div className="relative">
-        <p className="text-sm sm:text-base text-gray-700 leading-relaxed sm:leading-loose animate-in slide-in-from-bottom-2 duration-500 delay-200">
+        {/* En pantalla: mostrar texto truncado o completo según isExpanded */}
+        <p className="text-sm sm:text-base text-gray-700 leading-relaxed sm:leading-loose animate-in slide-in-from-bottom-2 duration-500 delay-200 print:hidden">
           {isExpanded || !isLongText ? summary : shortText}
+        </p>
+
+        {/* En PDF: siempre mostrar texto completo */}
+        <p className="hidden print:block text-sm sm:text-base text-gray-700 leading-relaxed sm:leading-loose">
+          {summary}
         </p>
 
         {isLongText && (

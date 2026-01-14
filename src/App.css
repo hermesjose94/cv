@@ -38,8 +38,13 @@ section[id] {
 @media print {
   /* Ocultar headers y footers del navegador (URL, fecha, etc.) */
   @page {
-    margin: 15mm 0;
+    margin: 0;
     size: A4;
+  }
+
+  /* Alternativa para navegadores que lo soporten */
+  @page {
+    margin: 10mm 0;
   }
 
   body {
@@ -56,7 +61,15 @@ section[id] {
   }
 
   /* Ocultar solo el header (navegación) */
-  header[data-pdf-exclude='true'] {
+  header[data-pdf-exclude='true'],
+  header {
+    display: none !important;
+  }
+
+  /* Ocultar todos los botones del header (navegación, PDF, idioma) */
+  header button,
+  header select,
+  header nav {
     display: none !important;
   }
 
@@ -133,9 +146,14 @@ section[id] {
     display: none !important;
   }
 
-  /* Mostrar avatar en PDF */
-  #about .print\:hidden {
+  /* Mostrar avatar en PDF - SOLO el contenedor del avatar, no otros elementos */
+  #about > div > div.print\:hidden {
     display: flex !important;
+  }
+
+  /* Asegurar que el botón de email con print:hidden se mantenga oculto */
+  #about button.print\:hidden {
+    display: none !important;
   }
 
   /* Avatar en PDF */
@@ -211,52 +229,27 @@ section[id] {
     margin-top: 0 !important;
   }
 
-  /* Email - MOSTRAR CON TEXTO COMPLETO */
-  #about button {
+  /* Email para PDF - versión simplificada con hidden print:flex */
+  #about .print\:flex {
     display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     align-items: center !important;
     font-size: 11px !important;
     color: #6b7280 !important;
-    text-decoration: none !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
     margin-right: 20px !important;
-    box-shadow: none !important;
-    width: auto !important;
     line-height: 1.4 !important;
   }
 
-  /* TODOS los spans del email - FORZAR VISIBILIDAD */
-  #about button span {
-    display: inline !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  #about .print\:flex svg {
+    width: 11px !important;
+    height: 11px !important;
+    margin-right: 4px !important;
+    color: #6b7280 !important;
+    flex-shrink: 0 !important;
+  }
+
+  #about .print\:flex span {
     font-size: 11px !important;
     color: #6b7280 !important;
-    flex: none !important;
-    max-width: none !important;
-    width: auto !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-  }
-
-  /* Span con clase flex-1 - FORZAR ANCHO AUTO */
-  #about button span.flex-1,
-  #about button span.break-all {
-    flex: none !important;
-    width: auto !important;
-    max-width: none !important;
-    display: inline !important;
-  }
-
-  /* Ocultar solo el mensaje "copied" que tiene ambas clases */
-  #about button span.text-xs.text-green-600,
-  #about button span.animate-in {
-    display: none !important;
   }
 
   /* Teléfono - MOSTRAR EN LÍNEA */
@@ -387,11 +380,29 @@ section[id] {
     margin-bottom: 4mm !important;
   }
 
+  /* Texto del resumen - FORZAR MOSTRAR TODO EL CONTENIDO */
   #summary p {
     font-size: 11px !important;
     line-height: 1.5 !important;
     margin-bottom: 0 !important;
     margin-top: 0 !important;
+    /* Forzar que se muestre todo el texto, sin truncar */
+    max-height: none !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    display: block !important;
+  }
+
+  /* Ocultar botón "Ver más/Ver menos" del resumen en PDF */
+  #summary button {
+    display: none !important;
+  }
+
+  /* Asegurar que el contenedor del texto no esté limitado */
+  #summary .relative {
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   /* Eliminar márgenes y padding innecesarios */

@@ -105,10 +105,11 @@ export function PersonalInfo({ personalInfo }: PersonalInfoProps) {
         </div>
 
         <div className="space-y-2 sm:space-y-3 lg:col-span-2">
+          {/* Email - Versión para pantalla (interactiva) */}
           {personalInfo.email && (
             <button
               onClick={handleEmailClick}
-              className="text-sm sm:text-base text-gray-600 hover:text-blue-600 flex items-center transition-all group w-full text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1 -m-1 animate-in slide-in-from-right-4 duration-500 delay-300"
+              className="text-sm sm:text-base text-gray-600 hover:text-blue-600 flex items-center transition-all group w-full text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1 -m-1 animate-in slide-in-from-right-4 duration-500 delay-300 print:hidden"
             >
               <svg
                 className="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-blue-600 transition-all duration-300 group-hover:scale-110"
@@ -131,6 +132,27 @@ export function PersonalInfo({ personalInfo }: PersonalInfoProps) {
               )}
             </button>
           )}
+
+          {/* Email - Versión para PDF (solo texto) */}
+          {personalInfo.email && (
+            <div className="hidden print:flex items-center text-sm sm:text-base text-gray-600">
+              <svg
+                className="w-4 h-4 mr-2 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              <span>{personalInfo.email}</span>
+            </div>
+          )}
+
           {personalInfo.phone && (
             <a
               href={`tel:${personalInfo.phone}`}

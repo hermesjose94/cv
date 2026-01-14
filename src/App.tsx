@@ -7,7 +7,6 @@ import {
   WorkExperience,
   TechnicalSkills,
   Education,
-  Contact,
 } from './components';
 import { SEO } from './components/common';
 
@@ -73,7 +72,7 @@ function App() {
   return (
     <>
       <SEO personalInfo={content.personal} />
-      <Layout personalInfo={content.personal}>
+      <Layout>
         <div
           id="cv-content"
           className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8"
@@ -83,7 +82,6 @@ function App() {
           <WorkExperience experience={content.experience} />
           <TechnicalSkills skills={content.skills} />
           <Education education={content.education} />
-          <Contact personalInfo={content.personal} />
         </div>
       </Layout>
     </>

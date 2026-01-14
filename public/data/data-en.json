@@ -3,11 +3,13 @@
     "name": "Hermes Pérez",
     "title": "Tech Lead | Senior Full Stack Developer | Computer Engineer",
     "location": "Bogotá, Colombia (Remote)",
-    "email": "hermes.perez@example.com",
-    "linkedin": "linkedin.com/in/hermes-perez",
-    "phone": "+57 XXX XXX XXXX"
+    "email": "hermesjose94work@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/hermes-perez-567446172/",
+    "github": "https://github.com/hermesjose94",
+    "website": "https://hermesjose94.github.io/",
+    "phone": "+57 305 271 4530"
   },
-  "summary": "Computer Engineer with over 8 years of experience leading high-performance teams and developing scalable software solutions. Specialist in modern architectures (React, Node.js, Next.js) with extensive experience as Tech Lead and Technology Director. Expert in optimizing the software development lifecycle (SDLC), implementing automated testing (Jest), and leading technical transformation in agile environments. Focused on delivering high-quality technical products and strategic alignment with business objectives.",
+  "summary": "Computer Engineer with over 8 years of experience leading engineering teams and architecting high-availability software solutions. Specialized in the modern JavaScript ecosystem (React, Node.js, Next.js) with a strong track record as Tech Lead and IT Director. Expert in optimizing the Software Development Life Cycle (SDLC), leading cross-functional teams, and solving complex technical challenges. Highly skilled in technical communication, negotiation, and aligning technology with business strategy.",
   "experience": [
     {
       "id": "jump-cube-2024",
@@ -16,35 +18,48 @@
       "startDate": "2024-11",
       "endDate": null,
       "location": "Bogotá (Remote)",
-      "description": "Technical leadership of complex projects using React, Node.js and cloud architectures.",
+      "description": "Strategic technical leadership on complex projects utilizing scalable architectures and cloud services.",
       "highlights": [
-        "Technical leadership of complex projects using React, Node.js and cloud architectures",
-        "Mentoring development teams and making decisions about infrastructure and technology stack",
-        "Workflow optimization through CI/CD and comprehensive code reviews"
+        "Leading cross-functional engineering teams and making critical infrastructure decisions.",
+        "Optimizing workflows through CI/CD implementation, code reviews, and technical standardization.",
+        "Architecting modern solutions using Next.js, TypeScript, and AWS services (CloudFront).",
+        "Driving quality assurance through Unit Testing and Jest implementation."
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "CI/CD"]
+      "technologies": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "AWS",
+        "Nextjs",
+        "Jest",
+        "CI/CD",
+        "NoSQL",
+        "Team Leadership"
+      ]
     },
     {
       "id": "bti-lab-2022",
       "company": "BTI (BTi Lab)",
-      "position": "Front-End Tech Lead / Director / Tech Lead",
+      "position": "IT Director / Front-End Tech Lead",
       "startDate": "2022-03",
       "endDate": "2024-11",
       "location": "Bogotá (Remote)",
-      "description": "Constant evolution from Tech Lead to Area Director, managing IT strategy and department KPIs.",
+      "description": "Comprehensive IT department management, overseeing technology strategy, budgeting, and global KPI compliance.",
       "highlights": [
-        "Constant evolution from Tech Lead to Area Director, managing IT strategy and department KPIs",
-        "Front-End architecture definition for multiple projects using Next.js, TypeScript and Angular",
-        "Implementation of Unit Testing methodologies (Jest) to ensure software stability",
-        "Technical negotiation with stakeholders and infrastructure budget management in GCP and Amazon CloudFront"
+        "Evolving from Tech Lead to IT Director, managing the organization's long-term technical vision.",
+        "Defining robust Front-End architectures for multiple concurrent projects using Next.js and Angular.",
+        "Managing cloud infrastructure on GCP and leading stakeholder negotiations.",
+        "Spearheading complex problem-solving and high-fidelity UX prototyping."
       ],
       "technologies": [
         "Next.js",
-        "TypeScript",
         "Angular",
-        "Jest",
         "GCP",
-        "Amazon CloudFront"
+        "Jest",
+        "KPIs",
+        "Management",
+        "Negotiation",
+        "SOA"
       ]
     },
     {
@@ -54,16 +69,18 @@
       "startDate": "2021-08",
       "endDate": "2022-03",
       "location": "Remote",
-      "description": "Comprehensive application development using Functional Programming and microservices architectures.",
+      "description": "End-to-end application development under Functional Programming and microservices paradigms.",
       "highlights": [
-        "Comprehensive application development using Functional Programming and microservices architectures",
-        "NoSQL database management and software infrastructure optimization"
+        "Designing and maintaining scalable software infrastructure for high-concurrency services.",
+        "Implementing decoupled architectures and advanced NoSQL database management."
       ],
       "technologies": [
         "Node.js",
         "Functional Programming",
         "Microservices",
-        "NoSQL"
+        "NoSQL",
+        "MVC",
+        "PWA"
       ]
     },
     {
@@ -73,92 +90,63 @@
       "startDate": "2020-06",
       "endDate": "2022-03",
       "location": "Remote",
-      "description": "Development of advanced user interfaces with React.js and GraphQL.",
+      "description": "Premium UI development with a focus on performance, accessibility, and SEO.",
       "highlights": [
-        "Development of advanced user interfaces with React.js and GraphQL",
-        "Ensuring cross-browser compatibility and performance optimization (SEO/PWA)"
+        "Developing interactive Progressive Web Applications (PWA) using React.js and GraphQL data fetching.",
+        "Ensuring cross-browser compatibility and frontend performance optimization."
       ],
-      "technologies": ["React.js", "GraphQL", "SEO", "PWA"]
-    },
-    {
-      "id": "nelumbo-2017",
-      "company": "Nelumbo",
-      "position": "Full Stack Developer",
-      "startDate": "2017-06",
-      "endDate": "2020-12",
-      "location": "Cúcuta, Colombia",
-      "description": "Development of robust applications using JavaScript, PHP (Laravel) and PostgreSQL.",
-      "highlights": [
-        "Development of robust applications using JavaScript, PHP (Laravel) and PostgreSQL",
-        "Implementation of MVC design patterns and deployment of scalable solutions for various sectors"
-      ],
-      "technologies": ["JavaScript", "PHP", "Laravel", "PostgreSQL", "MVC"]
+      "technologies": [
+        "React.js",
+        "GraphQL",
+        "SASS",
+        "SEO",
+        "PWA",
+        "Responsive Web Design"
+      ]
     }
   ],
   "skills": [
     {
       "category": "Frontend",
       "skills": [
-        { "name": "React.js", "level": 5, "years": 6 },
-        { "name": "Next.js", "level": 5, "years": 4 },
-        { "name": "Angular", "level": 4, "years": 3 },
-        { "name": "TypeScript", "level": 5, "years": 5 },
-        { "name": "HTML5/CSS3", "level": 5, "years": 8 },
-        { "name": "SASS", "level": 4, "years": 4 }
+        { "name": "React.js / Next.js", "level": 5, "years": 7 },
+        { "name": "TypeScript / JavaScript", "level": 5, "years": 8 },
+        { "name": "Angular", "level": 4, "years": 4 },
+        { "name": "PWA / Responsive Design", "level": 5, "years": 6 },
+        { "name": "SASS / CSS3 / HTML5", "level": 5, "years": 8 }
       ]
     },
     {
-      "category": "Backend",
+      "category": "Leadership & Management",
       "skills": [
-        { "name": "Node.js", "level": 5, "years": 6 },
-        { "name": "Express.js", "level": 5, "years": 5 },
-        { "name": "Python", "level": 4, "years": 3 },
-        { "name": "PHP", "level": 4, "years": 4 },
-        { "name": "Laravel", "level": 4, "years": 3 }
+        { "name": "Technical & Team Leadership", "level": 5, "years": 5 },
+        { "name": "IT Strategy / KPI Management", "level": 5, "years": 4 },
+        {
+          "name": "Negotiation / Stakeholder Management",
+          "level": 4,
+          "years": 4
+        },
+        { "name": "Public Speaking", "level": 4, "years": 8 }
       ]
     },
     {
-      "category": "Databases",
+      "category": "Methodologies & Quality",
       "skills": [
-        { "name": "MongoDB", "level": 4, "years": 4 },
-        { "name": "PostgreSQL", "level": 4, "years": 5 }
-      ]
-    },
-    {
-      "category": "Cloud & DevOps",
-      "skills": [
-        { "name": "Amazon CloudFront", "level": 4, "years": 2 },
-        { "name": "Google Cloud Platform", "level": 4, "years": 2 },
-        { "name": "Git/GitHub", "level": 5, "years": 8 },
-        { "name": "CI/CD", "level": 4, "years": 3 }
-      ]
-    },
-    {
-      "category": "Testing & Quality",
-      "skills": [
-        { "name": "Jest", "level": 4, "years": 3 },
-        { "name": "Unit Testing", "level": 4, "years": 4 },
-        { "name": "Code Review", "level": 5, "years": 5 }
-      ]
-    },
-    {
-      "category": "Architecture",
-      "skills": [
-        { "name": "SOA", "level": 4, "years": 3 },
-        { "name": "MVC", "level": 5, "years": 6 },
-        { "name": "Microservices", "level": 4, "years": 3 },
-        { "name": "PWA", "level": 4, "years": 2 }
+        { "name": "SDLC / CI/CD", "level": 5, "years": 6 },
+        { "name": "Testing (Jest / Unit Testing)", "level": 4, "years": 5 },
+        { "name": "MVC / Functional Programming", "level": 5, "years": 8 },
+        { "name": "UX Prototyping / SEO", "level": 4, "years": 6 }
       ]
     }
   ],
   "education": [
     {
-      "degree": "Computer Engineering",
+      "degree": "B.S. in Computer Engineering",
       "institution": "Universidad Nacional Experimental del Táchira (UNET)",
       "startYear": 2011,
       "endYear": 2018,
       "location": "Venezuela"
     }
   ],
-  "lastUpdated": "2025-01-13"
+  "lastUpdated": "2026-01-13"
 }

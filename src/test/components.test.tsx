@@ -8,7 +8,6 @@ import {
   WorkExperience,
   TechnicalSkills,
   Education,
-  Contact,
 } from '../components';
 import type {
   PersonalInfo as PersonalInfoType,
@@ -96,13 +95,26 @@ describe('CV Section Components', () => {
     it('renders personal information correctly', () => {
       renderWithI18n(<PersonalInfo personalInfo={mockPersonalInfo} />);
 
-      expect(screen.getByText('Hermes Pérez')).toBeInTheDocument();
-      expect(
-        screen.getByText('Tech Lead | Senior Full Stack Developer')
-      ).toBeInTheDocument();
-      expect(screen.getByText('Bogotá, Colombia')).toBeInTheDocument();
+      // El nombre aparece dos veces: una para web y otra para PDF
+      const names = screen.getAllByText('Hermes Pérez');
+      expect(names).toHaveLength(2);
+      expect(names[0]).toBeInTheDocument();
+
+      const titles = screen.getAllByText(
+        'Tech Lead | Senior Full Stack Developer'
+      );
+      expect(titles).toHaveLength(2);
+
+      const locations = screen.getAllByText('Bogotá, Colombia');
+      expect(locations).toHaveLength(2);
+
       expect(screen.getByText('hermes.perez@example.com')).toBeInTheDocument();
       expect(screen.getByText('LinkedIn')).toBeInTheDocument();
+
+      // Verificar que el avatar está presente
+      const avatar = screen.getByAltText('Hermes Pérez');
+      expect(avatar).toBeInTheDocument();
+      expect(avatar).toHaveAttribute('src', '/avatar.png');
     });
 
     it('handles missing optional fields gracefully', () => {
@@ -114,9 +126,16 @@ describe('CV Section Components', () => {
 
       renderWithI18n(<PersonalInfo personalInfo={minimalPersonalInfo} />);
 
-      expect(screen.getByText('Test Name')).toBeInTheDocument();
-      expect(screen.getByText('Test Title')).toBeInTheDocument();
-      expect(screen.getByText('Test Location')).toBeInTheDocument();
+      // El nombre aparece dos veces: una para web y otra para PDF
+      const names = screen.getAllByText('Test Name');
+      expect(names).toHaveLength(2);
+
+      const titles = screen.getAllByText('Test Title');
+      expect(titles).toHaveLength(2);
+
+      const locations = screen.getAllByText('Test Location');
+      expect(locations).toHaveLength(2);
+
       expect(screen.queryByText('@')).not.toBeInTheDocument();
     });
   });
@@ -248,41 +267,6 @@ describe('CV Section Components', () => {
       ).toBeInTheDocument();
       expect(screen.getByText('Test University')).toBeInTheDocument();
       expect(screen.getByText('Another University')).toBeInTheDocument();
-    });
-  });
-
-  describe('Contact Component', () => {
-    it('renders contact information correctly', () => {
-      renderWithI18n(<Contact personalInfo={mockPersonalInfo} />);
-
-      expect(
-        screen.getByText('¿Interesado en colaborar? ¡Contáctame!')
-      ).toBeInTheDocument();
-
-      const emailButton = screen.getByRole('button', { name: 'Contactar' });
-      expect(emailButton).toBeInTheDocument();
-
-      const linkedinLink = screen.getByRole('link', { name: 'LinkedIn' });
-      expect(linkedinLink).toHaveAttribute(
-        'href',
-        'https://linkedin.com/in/hermes-perez'
-      );
-      expect(linkedinLink).toHaveAttribute('target', '_blank');
-    });
-
-    it('handles missing contact information gracefully', () => {
-      const minimalPersonalInfo = {
-        name: 'Test Name',
-        title: 'Test Title',
-        location: 'Test Location',
-      };
-
-      renderWithI18n(<Contact personalInfo={minimalPersonalInfo} />);
-
-      expect(
-        screen.getByText('¿Interesado en colaborar? ¡Contáctame!')
-      ).toBeInTheDocument();
-      expect(screen.queryByRole('link')).not.toBeInTheDocument();
     });
   });
 

@@ -3,11 +3,13 @@
     "name": "Hermes Pérez",
     "title": "Tech Lead | Senior Full Stack Developer | Ingeniero Informático",
     "location": "Bogotá, Colombia (Remoto)",
-    "email": "hermes.perez@example.com",
-    "linkedin": "linkedin.com/in/hermes-perez",
-    "phone": "+57 XXX XXX XXXX"
+    "email": "hermesjose94work@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/hermes-perez-567446172/",
+    "github": "https://github.com/hermesjose94",
+    "website": "https://hermesjose94.github.io/",
+    "phone": "+57 305 271 4530"
   },
-  "summary": "Ingeniero Informático con más de 8 años de trayectoria liderando equipos de alto rendimiento y desarrollando soluciones de software escalables. Especialista en arquitecturas modernas (React, Node.js, Next.js) con amplia experiencia como Tech Lead y Director de tecnología. Experto en optimizar el ciclo de vida del desarrollo de software (SDLC), implementar pruebas automatizadas (Jest) y liderar la transformación técnica en entornos ágiles. Enfocado en la entrega de productos de alta calidad técnica y alineación estratégica con los objetivos del negocio.",
+  "summary": "Ingeniero Informático con más de 8 años de experiencia liderando equipos de ingeniería y arquitecturando soluciones de software de alta disponibilidad. Especialista en el ecosistema moderno de JavaScript (React, Node.js, Next.js) con un sólido historial como Tech Lead y Director de Tecnología. Experto en la optimización del ciclo de vida de desarrollo (SDLC), liderazgo de equipos multidisciplinarios y resolución de problemas complejos. Poseo habilidades destacadas en comunicación técnica, negociación y alineación estratégica de tecnología con objetivos de negocio.",
   "experience": [
     {
       "id": "jump-cube-2024",
@@ -16,35 +18,49 @@
       "startDate": "2024-11",
       "endDate": null,
       "location": "Bogotá (Remoto)",
-      "description": "Liderazgo técnico de proyectos complejos utilizando React, Node.js y arquitecturas en la nube.",
+      "description": "Liderazgo técnico estratégico en proyectos de alta complejidad utilizando arquitecturas escalables y servicios en la nube.",
       "highlights": [
-        "Liderazgo técnico de proyectos complejos utilizando React, Node.js y arquitecturas en la nube",
-        "Mentoria de equipos de desarrollo y toma de decisiones sobre infraestructura y stack tecnológico",
-        "Optimización de flujos de trabajo mediante CI/CD y revisiones de código exhaustivas"
+        "Liderazgo técnico de equipos multidisciplinarios y toma de decisiones sobre infraestructura crítica.",
+        "Optimización de flujos de trabajo mediante CI/CD, revisiones de código y estandarización técnica.",
+        "Arquitectura de soluciones modernas utilizando Next.js, TypeScript y servicios de AWS como CloudFront.",
+        "Implementación de metodologías de calidad con Unit Testing y Jest."
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "CI/CD"]
+      "technologies": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "AWS",
+        "Nextjs",
+        "Jest",
+        "CI/CD",
+        "NoSQL",
+        "Team Leadership"
+      ]
     },
     {
       "id": "bti-lab-2022",
       "company": "BTI (BTi Lab)",
-      "position": "Tech Lead Front-End / Director / Tech Lead",
+      "position": "Director de Tecnología / Tech Lead Front-End",
       "startDate": "2022-03",
       "endDate": "2024-11",
       "location": "Bogotá (Remoto)",
-      "description": "Evolución constante desde Tech Lead hasta Director de área, gestionando la estrategia de TI y KPIs del departamento.",
+      "description": "Gestión integral del departamento de TI, supervisando la estrategia tecnológica, presupuestos y el cumplimiento de KPIs globales.",
       "highlights": [
-        "Evolución constante desde Tech Lead hasta Director de área, gestionando la estrategia de TI y KPIs del departamento",
-        "Definición de la arquitectura Front-End para múltiples proyectos utilizando Next.js, TypeScript y Angular",
-        "Implementación de metodologías de Unit Testing (Jest) para garantizar la estabilidad del software",
-        "Negociación técnica con stakeholders y gestión de presupuestos de infraestructura en GCP y Amazon CloudFront"
+        "Evolución estratégica de Tech Lead a Director de área, gestionando la visión tecnológica de la organización.",
+        "Definición de arquitectura Front-End robusta para múltiples proyectos con Next.js y Angular.",
+        "Gestión de infraestructura en Google Cloud Platform (GCP) y negociación con stakeholders.",
+        "Liderazgo en la resolución de problemas técnicos complejos y prototipado de alta fidelidad (UX)."
       ],
       "technologies": [
         "Next.js",
-        "TypeScript",
         "Angular",
-        "Jest",
         "GCP",
-        "Amazon CloudFront"
+        "GCP",
+        "Jest",
+        "KPIs",
+        "Management",
+        "Negotiation",
+        "SOA"
       ]
     },
     {
@@ -54,16 +70,18 @@
       "startDate": "2021-08",
       "endDate": "2022-03",
       "location": "Remoto",
-      "description": "Desarrollo integral de aplicaciones utilizando Programación Funcional y arquitecturas de microservicios.",
+      "description": "Desarrollo integral de aplicaciones bajo paradigmas de programación funcional y microservicios.",
       "highlights": [
-        "Desarrollo integral de aplicaciones utilizando Programación Funcional y arquitecturas de microservicios",
-        "Gestión de bases de datos NoSQL y optimización de infraestructura de software"
+        "Diseño y mantenimiento de infraestructura de software escalable para servicios de alta concurrencia.",
+        "Implementación de arquitecturas desacopladas y gestión avanzada de bases de datos NoSQL."
       ],
       "technologies": [
         "Node.js",
-        "Programación Funcional",
-        "Microservicios",
-        "NoSQL"
+        "Functional Programming",
+        "Microservices",
+        "NoSQL",
+        "MVC",
+        "PWA"
       ]
     },
     {
@@ -73,81 +91,82 @@
       "startDate": "2020-06",
       "endDate": "2022-03",
       "location": "Remoto",
-      "description": "Desarrollo de interfaces de usuario avanzadas con React.js y GraphQL.",
+      "description": "Desarrollo de interfaces de usuario premium con enfoque en rendimiento, accesibilidad y SEO.",
       "highlights": [
-        "Desarrollo de interfaces de usuario avanzadas con React.js y GraphQL",
-        "Aseguramiento de la compatibilidad entre navegadores y optimización del rendimiento (SEO/PWA)"
+        "Desarrollo de aplicaciones web progresivas (PWA) e interactivas utilizando React.js y GraphQL.",
+        "Aseguramiento de la compatibilidad entre navegadores y optimización del rendimiento frontend."
       ],
-      "technologies": ["React.js", "GraphQL", "SEO", "PWA"]
+      "technologies": [
+        "React.js",
+        "GraphQL",
+        "SASS",
+        "SEO",
+        "PWA",
+        "Responsive Web Design"
+      ]
     },
     {
-      "id": "nelumbo-2017",
-      "company": "Nelumbo",
+      "id": "farmauno-2017",
+      "company": "FarmaUno",
       "position": "Full Stack Developer",
       "startDate": "2017-06",
-      "endDate": "2020-12",
-      "location": "Cúcuta, Colombia",
-      "description": "Desarrollo de aplicaciones robustas utilizando JavaScript, PHP (Laravel) y PostgreSQL.",
+      "endDate": "2020-06",
+      "location": "Venezuela",
+      "description": "Desarrollo y mantenimiento del sistema integral de compras, ventas e inventario para uso farmacéutico.",
       "highlights": [
-        "Desarrollo de aplicaciones robustas utilizando JavaScript, PHP (Laravel) y PostgreSQL",
-        "Implementación de patrones de diseño MVC y despliegue de soluciones escalables para diversos sectores"
+        "Arquitectura de sistema Full Stack robusto utilizando Laravel y PostgreSQL.",
+        "Automatización de procesos de inventario y optimización de consultas en bases de datos relacionales."
       ],
-      "technologies": ["JavaScript", "PHP", "Laravel", "PostgreSQL", "MVC"]
+      "technologies": ["PHP", "Laravel", "PostgreSQL", "JavaScript", "Python"]
     }
   ],
   "skills": [
     {
       "category": "Frontend",
       "skills": [
-        { "name": "React.js", "level": 5, "years": 6 },
-        { "name": "Next.js", "level": 5, "years": 4 },
-        { "name": "Angular", "level": 4, "years": 3 },
-        { "name": "TypeScript", "level": 5, "years": 5 },
-        { "name": "HTML5/CSS3", "level": 5, "years": 8 },
-        { "name": "SASS", "level": 4, "years": 4 }
+        { "name": "React.js / Next.js", "level": 5, "years": 7 },
+        { "name": "TypeScript / JavaScript", "level": 5, "years": 8 },
+        { "name": "Angular", "level": 4, "years": 4 },
+        { "name": "PWA / Responsive Design", "level": 5, "years": 6 },
+        { "name": "SASS / CSS3 / HTML5", "level": 5, "years": 8 },
+        { "name": "GraphQL", "level": 4, "years": 3 }
       ]
     },
     {
-      "category": "Backend",
+      "category": "Backend & Cloud",
       "skills": [
-        { "name": "Node.js", "level": 5, "years": 6 },
-        { "name": "Express.js", "level": 5, "years": 5 },
-        { "name": "Python", "level": 4, "years": 3 },
-        { "name": "PHP", "level": 4, "years": 4 },
-        { "name": "Laravel", "level": 4, "years": 3 }
+        { "name": "Node.js / Express.js", "level": 5, "years": 7 },
+        { "name": "Python / PHP (Laravel)", "level": 4, "years": 6 },
+        { "name": "AWS (CloudFront) / GCP", "level": 4, "years": 4 },
+        { "name": "Microservicios / SOA", "level": 4, "years": 5 },
+        { "name": "NoSQL (MongoDB) / PostgreSQL", "level": 5, "years": 8 }
       ]
     },
     {
-      "category": "Bases de Datos",
+      "category": "Liderazgo & Gestión",
       "skills": [
-        { "name": "MongoDB", "level": 4, "years": 4 },
-        { "name": "PostgreSQL", "level": 4, "years": 5 }
+        { "name": "Technical & Team Leadership", "level": 5, "years": 5 },
+        {
+          "name": "Estrategia de TI / Gestión de KPIs",
+          "level": 5,
+          "years": 4
+        },
+        {
+          "name": "Negociación / Gestión de Stakeholders",
+          "level": 4,
+          "years": 4
+        },
+        { "name": "Mentoria & Revisión de Código", "level": 5, "years": 5 },
+        { "name": "Hablar en público", "level": 4, "years": 8 }
       ]
     },
     {
-      "category": "Cloud & DevOps",
+      "category": "Metodologías & Calidad",
       "skills": [
-        { "name": "Amazon CloudFront", "level": 4, "years": 2 },
-        { "name": "Google Cloud Platform", "level": 4, "years": 2 },
-        { "name": "Git/GitHub", "level": 5, "years": 8 },
-        { "name": "CI/CD", "level": 4, "years": 3 }
-      ]
-    },
-    {
-      "category": "Testing & Calidad",
-      "skills": [
-        { "name": "Jest", "level": 4, "years": 3 },
-        { "name": "Unit Testing", "level": 4, "years": 4 },
-        { "name": "Code Review", "level": 5, "years": 5 }
-      ]
-    },
-    {
-      "category": "Arquitectura",
-      "skills": [
-        { "name": "SOA", "level": 4, "years": 3 },
-        { "name": "MVC", "level": 5, "years": 6 },
-        { "name": "Microservicios", "level": 4, "years": 3 },
-        { "name": "PWA", "level": 4, "years": 2 }
+        { "name": "SDLC / CI/CD", "level": 5, "years": 6 },
+        { "name": "Testing (Jest / Unit Testing)", "level": 4, "years": 5 },
+        { "name": "MVC / Functional Programming", "level": 5, "years": 8 },
+        { "name": "UX Prototyping / SEO", "level": 4, "years": 6 }
       ]
     }
   ],
@@ -160,5 +179,5 @@
       "location": "Venezuela"
     }
   ],
-  "lastUpdated": "2025-01-13"
+  "lastUpdated": "2026-01-13"
 }

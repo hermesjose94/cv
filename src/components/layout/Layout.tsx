@@ -2,19 +2,17 @@ import { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { Header } from './Header';
 import { ErrorBoundary } from './ErrorBoundary';
-import type { PersonalInfo } from '../../types/cv.types';
 
 interface LayoutProps {
   children: ReactNode;
-  personalInfo: PersonalInfo;
 }
 
-export function Layout({ children, personalInfo }: LayoutProps) {
+export function Layout({ children }: LayoutProps) {
   const [activeSection, setActiveSection] = useState<string>('');
 
   // Intersection Observer to track active section
   useEffect(() => {
-    const sections = ['about', 'experience', 'skills', 'education', 'contact'];
+    const sections = ['about', 'experience', 'skills', 'education'];
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((sectionId) => {
@@ -51,11 +49,7 @@ export function Layout({ children, personalInfo }: LayoutProps) {
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-50 flex flex-col">
-        <Header
-          name={personalInfo.name}
-          onNavigate={handleNavigate}
-          activeSection={activeSection}
-        />
+        <Header onNavigate={handleNavigate} activeSection={activeSection} />
 
         <main className="flex-1">{children}</main>
       </div>

@@ -13,6 +13,5 @@ export function useNavigation(): NavigationSection[] {
     { id: 'experience', label: t('nav.experience') },
     { id: 'skills', label: t('nav.skills') },
     { id: 'education', label: t('nav.education') },
-    { id: 'contact', label: t('nav.contact') },
   ];
 }

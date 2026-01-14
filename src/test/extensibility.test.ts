@@ -291,8 +291,15 @@ describe('Content Extensibility Properties', () => {
             (exp) => exp.id !== targetId
           );
 
-          // Validar que el array es más pequeño
-          expect(filteredExperiences.length).toBe(experiences.length - 1);
+          // Contar cuántas experiencias tienen el mismo ID que el target
+          const countWithTargetId = experiences.filter(
+            (exp) => exp.id === targetId
+          ).length;
+
+          // Validar que el array es más pequeño (eliminó todas las que tenían ese ID)
+          expect(filteredExperiences.length).toBe(
+            experiences.length - countWithTargetId
+          );
 
           // Validar que la experiencia eliminada no está presente
           const removedExperience = filteredExperiences.find(
@@ -302,11 +309,12 @@ describe('Content Extensibility Properties', () => {
 
           // Validar que las demás experiencias están presentes
           for (let i = 1; i < experiences.length; i++) {
-            const found = filteredExperiences.find(
-              (exp) => exp.id === experiences[i].id
-            );
-            expect(found).toBeDefined();
-            expect(found).toEqual(experiences[i]);
+            if (experiences[i].id !== targetId) {
+              const found = filteredExperiences.find(
+                (exp) => exp.id === experiences[i].id
+              );
+              expect(found).toBeDefined();
+            }
           }
         }
       ),

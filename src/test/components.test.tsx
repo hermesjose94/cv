@@ -108,7 +108,11 @@ describe('CV Section Components', () => {
       const locations = screen.getAllByText('Bogotá, Colombia');
       expect(locations).toHaveLength(2);
 
-      expect(screen.getByText('hermes.perez@example.com')).toBeInTheDocument();
+      // El email también aparece dos veces: versión web (botón) y versión PDF (div)
+      const emails = screen.getAllByText('hermes.perez@example.com');
+      expect(emails).toHaveLength(2);
+      expect(emails[0]).toBeInTheDocument();
+
       expect(screen.getByText('LinkedIn')).toBeInTheDocument();
 
       // Verificar que el avatar está presente
@@ -147,7 +151,11 @@ describe('CV Section Components', () => {
 
       renderWithI18n(<ProfessionalSummary summary={summary} />);
 
-      expect(screen.getByText(summary)).toBeInTheDocument();
+      // El summary aparece dos veces: versión web y versión PDF
+      const summaries = screen.getAllByText(summary);
+      expect(summaries).toHaveLength(2);
+      expect(summaries[0]).toBeInTheDocument();
+
       expect(screen.getByText('Resumen Profesional')).toBeInTheDocument();
     });
   });
@@ -166,27 +174,34 @@ describe('CV Section Components', () => {
     it('handles expandable job sections', () => {
       renderWithI18n(<WorkExperience experience={mockWorkExperience} />);
 
-      // Initially, highlights should not be visible
-      expect(
-        screen.queryByText('Led team of 5 developers')
-      ).not.toBeInTheDocument();
+      // Los highlights aparecen en la versión PDF (hidden print:block)
+      const highlightsBeforeExpand = screen.getAllByText(
+        'Led team of 5 developers'
+      );
+      expect(highlightsBeforeExpand.length).toBe(1); // Solo versión PDF
 
       // Click "Ver más" button for first job
       const viewMoreButtons = screen.getAllByText('Ver más');
       fireEvent.click(viewMoreButtons[0]);
 
-      // Now highlights should be visible
-      expect(screen.getByText('Led team of 5 developers')).toBeInTheDocument();
-      expect(screen.getByText('React')).toBeInTheDocument();
+      // Ahora hay 2 versiones: web (expandida) + PDF
+      const highlightsAfterExpand = screen.getAllByText(
+        'Led team of 5 developers'
+      );
+      expect(highlightsAfterExpand.length).toBe(2);
+
+      const reactTags = screen.getAllByText('React');
+      expect(reactTags.length).toBe(2);
 
       // Click "Ver menos" to collapse
       const viewLessButton = screen.getByText('Ver menos');
       fireEvent.click(viewLessButton);
 
-      // Highlights should be hidden again
-      expect(
-        screen.queryByText('Led team of 5 developers')
-      ).not.toBeInTheDocument();
+      // Vuelve a quedar solo la versión PDF
+      const highlightsAfterCollapse = screen.getAllByText(
+        'Led team of 5 developers'
+      );
+      expect(highlightsAfterCollapse.length).toBe(1);
     });
 
     it('shows technologies as tags', () => {
@@ -196,9 +211,16 @@ describe('CV Section Components', () => {
       const viewMoreButtons = screen.getAllByText('Ver más');
       fireEvent.click(viewMoreButtons[0]);
 
-      expect(screen.getByText('React')).toBeInTheDocument();
-      expect(screen.getByText('Node.js')).toBeInTheDocument();
-      expect(screen.getByText('TypeScript')).toBeInTheDocument();
+      // Las tecnologías aparecen dos veces: web expandida + PDF
+      const reactTags = screen.getAllByText('React');
+      expect(reactTags.length).toBe(2);
+      expect(reactTags[0]).toBeInTheDocument();
+
+      const nodeTags = screen.getAllByText('Node.js');
+      expect(nodeTags.length).toBe(2);
+
+      const tsTags = screen.getAllByText('TypeScript');
+      expect(tsTags.length).toBe(2);
     });
   });
 

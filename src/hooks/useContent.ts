@@ -17,7 +17,13 @@ export function useContent(): UseContentResult {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const currentLanguage = (i18n.language || 'es') as SupportedLanguage;
+  // Normalize language code to supported languages (en-US -> en, es-ES -> es)
+  const normalizeLanguage = (lang: string): SupportedLanguage => {
+    const baseLang = lang.split('-')[0].toLowerCase();
+    return (baseLang === 'en' ? 'en' : 'es') as SupportedLanguage;
+  };
+
+  const currentLanguage = normalizeLanguage(i18n.language || 'es');
 
   const switchLanguage = (newLanguage: SupportedLanguage) => {
     i18n.changeLanguage(newLanguage);

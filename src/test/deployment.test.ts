@@ -63,8 +63,8 @@ describe('Deployment Configuration Properties', () => {
 
     const viteConfig = readFileSync(viteConfigPath, 'utf-8');
 
-    // Validar que usa base path diferente según el entorno
-    expect(viteConfig).toContain("base: command === 'serve' ? '/' : '/cv/'");
+    // Validar que usa base path raíz
+    expect(viteConfig).toContain("base: '/'");
 
     // Validar configuración de build
     expect(viteConfig).toContain("outDir: 'dist'");

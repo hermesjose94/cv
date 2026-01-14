@@ -7,7 +7,7 @@ import { resolve } from 'path';
 export default defineConfig(({ command }) => {
   const config = {
     plugins: [react()],
-    base: command === 'serve' ? '/' : '/cv/', // Raíz en desarrollo, /cv/ en producción
+    base: '/', // Usar raíz para GitHub Pages
     build: {
       outDir: 'dist',
       sourcemap: command === 'serve', // Solo sourcemaps en desarrollo

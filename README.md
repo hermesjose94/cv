@@ -143,7 +143,7 @@ El workflow se ejecuta en:
 
 ### URL de Producción
 
-El sitio estará disponible en: `https://hermesjose94.github.io/cv/`
+El sitio estará disponible en: `https://hermesjose94.github.io/`
 
 ### Solución de Problemas
 

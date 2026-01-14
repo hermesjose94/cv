@@ -36,6 +36,12 @@ section[id] {
 
 /* Estilos para impresión/PDF */
 @media print {
+  /* Ocultar headers y footers del navegador (URL, fecha, etc.) */
+  @page {
+    margin: 15mm 0;
+    size: A4;
+  }
+
   body {
     background-color: white !important;
     margin: 0;
@@ -45,36 +51,58 @@ section[id] {
   #root {
     max-width: 100%;
     margin: 0;
-    padding: 15mm;
+    padding: 0 12mm;
     background-color: white !important;
   }
 
-  /* Ocultar header, botones y sección de contacto */
-  header,
-  button,
-  a[class*='bg-blue'],
-  a[class*='rounded-lg'],
-  section[id='contact'] {
+  /* Ocultar solo el header (navegación) */
+  header[data-pdf-exclude='true'] {
     display: none !important;
+  }
+
+  /* Ocultar avatar en PDF */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Mostrar versión sin avatar en PDF */
+  .print\:block {
+    display: block !important;
   }
 
   /* Agregar línea azul a títulos de sección */
   section > h2 {
     border-bottom: 2px solid #2563eb;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    margin-top: 0;
     page-break-after: avoid;
+    font-size: 15px;
+    font-weight: 600;
   }
 
-  /* Evitar saltos de página dentro de secciones */
+  /* Permitir división de secciones largas */
   section {
-    page-break-inside: avoid;
-    margin-bottom: 6mm;
+    page-break-inside: auto;
+    margin-bottom: 4mm;
     background-color: white !important;
     box-shadow: none !important;
     border: none !important;
+    padding: 0 !important;
   }
 
-  /* Eliminar fondos grises y cajas */
+  /* Evitar saltos de página solo en elementos específicos */
+  section > h2 {
+    page-break-after: avoid;
+  }
+
+  /* Para experiencia laboral, permitir división entre trabajos */
+  #experience > div > div {
+    page-break-inside: avoid;
+    margin-bottom: 4mm !important;
+  }
+
+  /* Reducir espaciado general */
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -93,15 +121,298 @@ section[id] {
     border-radius: 0 !important;
   }
 
+  /* Estilos para información personal en PDF - LIMPIO Y ORGANIZADO */
+  #about {
+    margin-bottom: 5mm !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+  }
+
+  /* Ocultar el título "Información Personal" en PDF */
+  #about > h2 {
+    display: none !important;
+  }
+
+  /* Mostrar avatar en PDF */
+  #about .print\:hidden {
+    display: flex !important;
+  }
+
+  /* Avatar en PDF */
+  #about img {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    margin-right: 15px !important;
+  }
+
+  /* Contenedor del avatar y info */
+  #about .lg\:col-span-2:first-child {
+    display: flex !important;
+    margin-bottom: 3px !important;
+  }
+
+  /* Nombre grande y destacado */
+  #about h3 {
+    font-size: 24px !important;
+    margin-bottom: 2px !important;
+    margin-top: 0 !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Contenedor de nombre, título y ubicación */
+  #about .flex-1 {
+    display: block !important;
+  }
+
+  /* Título profesional - primer p dentro de flex-1 */
+  #about .flex-1 > p:nth-of-type(1) {
+    font-size: 13px !important;
+    margin-bottom: 3px !important;
+    margin-top: 0 !important;
+    line-height: 1.4 !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+    display: block !important;
+  }
+
+  /* Ubicación - segundo p dentro de flex-1 */
+  #about .flex-1 > p:nth-of-type(2) {
+    font-size: 11px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    line-height: 1.4 !important;
+    color: #6b7280 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Span dentro del párrafo de ubicación */
+  #about .flex-1 > p:nth-of-type(2) span {
+    display: inline !important;
+  }
+
+  /* Ocultar la versión sin avatar */
+  #about .print\:block {
+    display: none !important;
+  }
+
+  /* Contenedor de email y teléfono - EN NUEVA LÍNEA */
+  #about .lg\:col-span-2:last-child {
+    display: block !important;
+    margin-top: 3px !important;
+  }
+
+  #about .space-y-2:last-child,
+  #about .space-y-3:last-child {
+    display: block !important;
+    margin-top: 0 !important;
+  }
+
+  /* Email - MOSTRAR CON TEXTO COMPLETO */
+  #about button {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 20px !important;
+    box-shadow: none !important;
+    width: auto !important;
+    line-height: 1.4 !important;
+  }
+
+  /* TODOS los spans del email - FORZAR VISIBILIDAD */
+  #about button span {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+    flex: none !important;
+    max-width: none !important;
+    width: auto !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  /* Span con clase flex-1 - FORZAR ANCHO AUTO */
+  #about button span.flex-1,
+  #about button span.break-all {
+    flex: none !important;
+    width: auto !important;
+    max-width: none !important;
+    display: inline !important;
+  }
+
+  /* Ocultar solo el mensaje "copied" que tiene ambas clases */
+  #about button span.text-xs.text-green-600,
+  #about button span.animate-in {
+    display: none !important;
+  }
+
+  /* Teléfono - MOSTRAR EN LÍNEA */
+  #about a[href^='tel:'] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 20px !important;
+    box-shadow: none !important;
+    width: auto !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Texto del teléfono */
+  #about a[href^='tel:'] span {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+  }
+
+  /* Iconos de email y teléfono */
+  #about button svg,
+  #about a[href^='tel:'] svg {
+    width: 11px !important;
+    height: 11px !important;
+    margin-right: 4px !important;
+    color: #6b7280 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Icono de ubicación */
+  #about .flex-1 > p svg {
+    width: 11px !important;
+    height: 11px !important;
+    margin-right: 4px !important;
+    color: #6b7280 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Ocultar badges de redes sociales */
+  #about .flex-wrap,
+  #about .pt-2 {
+    display: none !important;
+  }
+
+  /* Ocultar texto "copied" del email */
+  #about button span:last-child {
+    display: none !important;
+  }
+
   /* Mantener los badges de skills con sus colores */
   #skills span[class*='bg-blue'] {
     background-color: #eff6ff !important;
     color: #1d4ed8 !important;
     border: 1px solid #93c5fd !important;
-    padding: 4px 12px !important;
+    padding: 2px 8px !important;
     border-radius: 9999px !important;
     display: inline-block !important;
-    margin: 4px !important;
+    margin: 2px !important;
+    font-size: 10px !important;
+  }
+
+  /* Reducir espaciado en experiencia laboral */
+  #experience {
+    margin-bottom: 4mm !important;
+  }
+
+  #experience > div {
+    margin-bottom: 4mm !important;
+  }
+
+  #experience h3 {
+    font-size: 13px !important;
+    margin-bottom: 2px !important;
+    margin-top: 0 !important;
+    font-weight: 600 !important;
+  }
+
+  #experience p {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 2px !important;
+    margin-top: 0 !important;
+  }
+
+  #experience ul {
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+    padding-left: 15px !important;
+  }
+
+  #experience li {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Reducir espaciado en educación */
+  #education > div {
+    margin-bottom: 2mm !important;
+  }
+
+  #education h3 {
+    font-size: 12px !important;
+    margin-bottom: 1px !important;
+    margin-top: 0 !important;
+  }
+
+  #education p {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1px !important;
+  }
+
+  /* Resumen profesional compacto pero legible */
+  #summary {
+    margin-bottom: 4mm !important;
+  }
+
+  #summary p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Eliminar márgenes y padding innecesarios */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Reducir espaciado entre todos los elementos */
+  div,
+  p,
+  ul,
+  li {
+    margin-top: 0 !important;
+  }
+
+  /* Asegurar que no haya espacios extra en contenedores */
+  .space-y-4 > * + *,
+  .space-y-3 > * + *,
+  .space-y-2 > * + * {
+    margin-top: 2mm !important;
   }
 }
 

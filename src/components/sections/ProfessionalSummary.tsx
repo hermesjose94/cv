@@ -14,7 +14,10 @@ export function ProfessionalSummary({ summary }: ProfessionalSummaryProps) {
   const shortText = isLongText ? summary.substring(0, 300) + '...' : summary;
 
   return (
-    <section className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6 transition-all duration-300 hover:shadow-md">
+    <section
+      id="summary"
+      className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6 transition-all duration-300 hover:shadow-md"
+    >
       <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 animate-in slide-in-from-top-2 duration-500">
         {t('sections.professionalSummary')}
       </h2>

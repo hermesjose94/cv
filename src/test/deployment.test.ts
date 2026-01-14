@@ -45,8 +45,12 @@ describe('Deployment Configuration Properties', () => {
     expect(workflowContent).toContain('actions/upload-pages-artifact');
     expect(workflowContent).toContain('actions/deploy-pages');
 
-    // Validar que el despliegue solo ocurre en push a main
+    // Validar que el despliegue solo ocurre en push a main o master
+    expect(workflowContent).toMatch(
+      /github\.ref == 'refs\/heads\/(main|master)'/
+    );
     expect(workflowContent).toContain("github.ref == 'refs/heads/main'");
+    expect(workflowContent).toContain("github.ref == 'refs/heads/master'");
   });
 
   test('Property 8.1: Configuración de Vite para GitHub Pages', () => {
@@ -204,6 +208,7 @@ describe('Deployment Configuration Properties', () => {
     expect(workflowContent).toContain('push:');
     expect(workflowContent).toContain('branches:');
     expect(workflowContent).toContain('- main');
+    expect(workflowContent).toContain('- master');
     expect(workflowContent).toContain('pull_request:');
   });
 });

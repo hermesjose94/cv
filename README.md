@@ -117,24 +117,47 @@ cv/
 
 El proyecto está configurado para despliegue automático en GitHub Pages mediante GitHub Actions.
 
-### Configuración de GitHub Pages
+### Configuración de GitHub Pages (IMPORTANTE)
+
+Para evitar workflows duplicados, debes configurar GitHub Pages correctamente:
 
 1. Ve a la configuración del repositorio en GitHub
 2. Navega a **Settings > Pages**
-3. En **Source**, selecciona **GitHub Actions**
-4. El workflow se ejecutará automáticamente en cada push a `main`
+3. En **Source**, selecciona **GitHub Actions** (NO selecciones "Deploy from a branch")
+4. Guarda los cambios
+
+Esto deshabilitará el workflow automático de GitHub Pages y solo se ejecutará nuestro workflow personalizado.
 
 ### Workflow de CI/CD
 
-El workflow incluye:
+El workflow incluye tres jobs:
 
 1. **Validación**: Lint, format check, type-check y tests
 2. **Build**: Generación del build de producción
-3. **Deploy**: Despliegue automático a GitHub Pages (solo en push a main)
+3. **Deploy**: Despliegue automático a GitHub Pages (solo en push a `master` o `main`)
+
+El workflow se ejecuta en:
+
+- **Push a master/main**: Ejecuta validación, build y deploy
+- **Pull Request**: Solo ejecuta validación y build (sin deploy)
 
 ### URL de Producción
 
-El sitio estará disponible en: `https://[tu-usuario].github.io/cv/`
+El sitio estará disponible en: `https://hermesjose94.github.io/cv/`
+
+### Solución de Problemas
+
+**Problema: Se ejecutan dos workflows simultáneamente**
+
+Esto ocurre cuando GitHub Pages está configurado en modo "Deploy from a branch". Solución:
+
+1. Ve a **Settings > Pages**
+2. Cambia **Source** a **GitHub Actions**
+3. Esto deshabilitará el workflow automático de GitHub
+
+**Problema: 404 al cargar archivos**
+
+Verifica que `vite.config.ts` tenga configurado `base: '/'` correctamente.
 
 ## 🧪 Testing
 

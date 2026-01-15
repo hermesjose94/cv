@@ -332,7 +332,13 @@ section[id] {
     margin-bottom: 6mm !important;
   }
 
-  #education > div {
+  /* Remover borde verde y padding */
+  #education > div > div {
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    background: none !important;
+    padding: 0 !important;
     margin-bottom: 3mm !important;
   }
 

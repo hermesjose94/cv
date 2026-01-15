@@ -51,6 +51,11 @@ section[id] {
     padding: 0;
   }
 
+  /* Eliminar gap del grid en print */
+  .grid {
+    gap: 0 !important;
+  }
+
   #root {
     max-width: 100%;
     margin: 0;
@@ -262,11 +267,14 @@ section[id] {
   /* Remover borde y padding azul */
   #experience > div > div {
     border-left: none !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
     background: none !important;
     page-break-inside: avoid;
-    margin-bottom: 5mm !important;
+  }
+
+  #experience > div > div + div {
+    margin-top: 3mm !important;
   }
 
   /* Empresa y posición */

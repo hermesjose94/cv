@@ -32,7 +32,7 @@ export function PersonalInfo({ personalInfo }: PersonalInfoProps) {
       <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
         {t('sections.personalInfo')}
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 print:gap-0">
         {/* Avatar - Solo visible en web, oculto en PDF */}
         <div className="flex items-start gap-4 sm:gap-6 lg:col-span-2 print:hidden">
           <img

@@ -154,7 +154,7 @@ section[id] {
     text-align: center !important;
     font-size: 11px !important;
     color: #000 !important;
-    margin: 0 0 2px 0 !important;
+    margin: 0 !important;
     font-weight: 400 !important;
   }
 
@@ -167,11 +167,11 @@ section[id] {
     display: block !important;
   }
 
-  /* Email y teléfono en línea horizontal SIN ICONOS */
+  /* Email y teléfono en línea horizontal SIN ICONOS - pegado al cargo */
   #about .lg\:col-span-2:last-child {
     text-align: center !important;
     display: block !important;
-    margin-top: 2px !important;
+    margin-top: 1px !important;
   }
 
   #about .print\:flex {
@@ -337,18 +337,18 @@ section[id] {
   }
 
   #education h3 {
-    font-size: 11px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
     color: #000 !important;
-    font-style: normal !important;
+    font-style: italic !important;
     margin: 0 !important;
   }
 
   #education p {
     font-size: 10px !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
     color: #000 !important;
-    margin: 1px 0 !important;
+    margin: 2px 0 !important;
   }
 
   /* ============================================

@@ -174,10 +174,16 @@ section[id] {
     margin-top: 0 !important;
   }
 
+  /* Eliminar espacio vertical entre email y teléfono */
+  #about .lg\:col-span-2:last-child > * {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
   #about .print\:flex {
     display: inline !important;
     color: #000 !important;
-    margin-right: 10px !important;
+    margin-right: 5px !important;
     font-size: 11px !important;
   }
 
@@ -186,7 +192,7 @@ section[id] {
     color: #000 !important;
     font-size: 11px !important;
     text-decoration: none !important;
-    margin-left: 10px !important;
+    margin-left: 5px !important;
   }
 
   /* Ocultar redes sociales */

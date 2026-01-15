@@ -45,7 +45,8 @@ section[id] {
   }
 
   body {
-    background-color: white !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     margin: 0;
     padding: 0;
   }
@@ -54,12 +55,14 @@ section[id] {
     max-width: 100%;
     margin: 0;
     padding: 0;
-    background-color: white !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
   }
 
   main {
     padding: 0 !important;
     margin: 0 !important;
+    background: #ffffff !important;
   }
 
   /* === OCULTAR NAVEGACIÓN === */
@@ -87,8 +90,9 @@ section[id] {
     page-break-inside: auto;
     margin-bottom: 6mm !important;
     padding: 0 !important;
-    background: white !important;
+    background: #ffffff !important;
     border: none !important;
+    box-shadow: none !important;
   }
 
   section:first-child {
@@ -113,7 +117,9 @@ section[id] {
      ============================================ */
   #about {
     text-align: center !important;
-    margin-bottom: 10mm !important;
+    margin-bottom: 4mm !important;
+    padding: 0 !important;
+    background: white !important;
   }
 
   /* Ocultar título "Información Personal" */
@@ -132,13 +138,13 @@ section[id] {
     text-align: center !important;
   }
 
-  /* Nombre grande centrado */
+  /* Nombre más pequeño centrado */
   #about h3 {
     text-align: center !important;
-    font-size: 32px !important;
+    font-size: 20px !important;
     font-weight: 700 !important;
     color: #000 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 2px !important;
     margin-top: 0 !important;
     letter-spacing: 0 !important;
   }
@@ -146,9 +152,9 @@ section[id] {
   /* Título profesional centrado */
   #about .flex-1 > p:nth-of-type(1) {
     text-align: center !important;
-    font-size: 13px !important;
+    font-size: 11px !important;
     color: #000 !important;
-    margin: 0 !important;
+    margin: 0 0 2px 0 !important;
     font-weight: 400 !important;
   }
 
@@ -165,7 +171,7 @@ section[id] {
   #about .lg\:col-span-2:last-child {
     text-align: center !important;
     display: block !important;
-    margin-top: 4px !important;
+    margin-top: 2px !important;
   }
 
   #about .print\:flex {
@@ -331,10 +337,10 @@ section[id] {
   }
 
   #education h3 {
-    font-size: 12px !important;
-    font-weight: 600 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
     color: #000 !important;
-    font-style: italic !important;
+    font-style: normal !important;
     margin: 0 !important;
   }
 

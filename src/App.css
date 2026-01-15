@@ -174,30 +174,42 @@ section[id] {
     margin-top: 0 !important;
   }
 
-  /* Eliminar espacio vertical entre email y teléfono */
-  #about .lg\:col-span-2:last-child > * {
-    display: inline !important;
-    margin: 0 !important;
+  /* Ocultar email versión pantalla (button) */
+  #about button.print\:hidden {
+    display: none !important;
   }
 
+  /* Solo mostrar email para PDF (print:flex) */
   #about .print\:flex {
     display: inline !important;
     color: #000 !important;
     margin-right: 5px !important;
     font-size: 11px !important;
+    margin: 0 !important;
   }
 
-  #about a[href^='tel:'] {
+  /* Solo mostrar teléfono */
+  #about a[href^='tel:']:not([href*='http']) {
     display: inline !important;
     color: #000 !important;
     font-size: 11px !important;
     text-decoration: none !important;
     margin-left: 5px !important;
+    margin: 0 0 0 5px !important;
   }
 
-  /* Ocultar redes sociales */
-  #about .flex-wrap,
+  /* Ocultar TODAS las redes sociales y otros links */
+  #about .flex-wrap {
+    display: none !important;
+  }
+
   #about .pt-2 {
+    display: none !important;
+  }
+
+  #about a[href*='linkedin'],
+  #about a[href*='github'],
+  #about a[href*='http'] {
     display: none !important;
   }
 
